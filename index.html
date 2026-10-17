@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#154c40" />
+    <meta
+      name="description"
+      content="Learn English through short stories, everyday vocabulary, and interactive quizzes, with optional Arabic support."
+    />
+    <title>istory — A little story. A new beginning.</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="header wrap">
+      <a class="brand" href="#" aria-label="istory home" dir="ltr"
+        >istory<span>✦</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#lessons">Stories</a><a href="#progress">My progress</a>
+      </nav>
+      <button
+        id="arabic-toggle"
+        class="help-toggle"
+        type="button"
+        aria-pressed="false"
+        aria-controls="arabic-guide"
+      >
+        <span lang="ar" dir="rtl">مساعدة بالعربية</span
+        ><span class="toggle-dot" aria-hidden="true"></span>
+      </button>
+    </header>
+    <main class="wrap">
+      <aside
+        id="arabic-guide"
+        class="arabic-help arabic-guide"
+        lang="ar"
+        dir="rtl"
+      >
+        <strong>أهلًا بك في istory!</strong> اختر قصة، واقرأها بالإنجليزية، ثم
+        أجب عن السؤال. عند تفعيل المساعدة ستظهر معاني الكلمات بالعربية. يمكنك
+        فتح الترجمة العربية داخل كل درس في أي وقت.
+      </aside>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">SMALL STORIES. REAL PROGRESS.</span>
+          <h1>A little story.<br />A new <em>beginning.</em></h1>
+          <p>
+            Build your English, one story at a time. Discover everyday words,
+            check your understanding, and make five minutes feel meaningful.
+          </p>
+          <a class="button" href="#lessons"
+            >Explore the stories <span aria-hidden="true">→</span></a
+          >
+          <div class="hero-meta">
+            <span>◷ Five-minute reads</span><span>✧ Your own pace</span
+            ><span>✓ No sign-up</span>
+          </div>
+        </div>
+        <div
+          class="hero-art"
+          aria-label="A little inspiration for your next chapter"
+        >
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <span class="spark spark-one">✦</span
+          ><span class="spark spark-two">✧</span>
+          <div class="story-card">
+            <span class="card-label">YOUR NEXT CHAPTER</span>
+            <div class="book-icon" aria-hidden="true">▤</div>
+            <h2 dir="ltr">A little practice.<br />A world of possibility.</h2>
+            <p>Every new word opens a door.</p>
+            <span class="card-bottom"
+              >STORIES THAT HELP YOU GROW <span>→</span></span
+            >
+          </div>
+          <div class="floating-word" dir="ltr">
+            grow <span>/ɡrəʊ/</span
+            ><small
+              >to develop, little by little
+              <span class="arabic-help" lang="ar" dir="rtl"
+                >ينمو · يتطوّر</span
+              ></small
+            >
+          </div>
+        </div>
+      </section>
+      <section
+        class="progress-strip"
+        id="progress"
+        aria-label="Your learning progress"
+      >
+        <div>
+          <span class="eyebrow">YOUR JOURNEY SO FAR</span>
+          <h2>Every little step counts.</h2>
+        </div>
+        <div class="stat">
+          <strong id="completed">0</strong><span>stories completed</span>
+        </div>
+        <div class="stat">
+          <strong id="words">0</strong><span>words explored</span>
+        </div>
+        <div class="progress-detail">
+          <span id="progress-label">Your first chapter is waiting</span
+          ><progress id="progress-bar" value="0" max="3">0 of 3</progress>
+        </div>
+      </section>
+      <section class="lessons-section" id="lessons">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">LEARN THROUGH STORIES</span>
+            <h2>Find your next chapter.</h2>
+          </div>
+          <span class="level-pill">Beginner friendly · A1</span>
+        </div>
+        <div class="lesson-grid" id="lesson-grid"></div>
+      </section>
+      <section class="note">
+        <span aria-hidden="true">✳</span>
+        <div>
+          <h2>Small habits. Beautiful possibilities.</h2>
+          <p>
+            You don’t need to know every word. Stay curious, take your time, and
+            let each story move you forward.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap">
+      <a class="brand" href="#" dir="ltr">istory<span>✦</span></a
+      ><span>Little stories. Wider horizons.</span
+      ><small>Your progress stays in this browser.</small>
+    </footer>
+    <dialog id="lesson-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-top">
+        <span id="dialog-label" class="eyebrow"></span
+        ><button
+          id="close-dialog"
+          class="icon-button"
+          aria-label="Close lesson"
+        >
+          ✕
+        </button>
+      </div>
+      <h2 id="dialog-title"></h2>
+      <p id="story-text" class="reading" lang="en" dir="ltr"></p>
+      <details>
+        <summary>Arabic translation · الترجمة العربية</summary>
+        <p id="translation" lang="ar" dir="rtl"></p>
+      </details>
+      <h3>Words to take with you</h3>
+      <div id="vocabulary" class="vocabulary"></div>
+      <form id="quiz-form">
+        <fieldset>
+          <legend id="question" dir="ltr" lang="en"></legend>
+          <div id="answers"></div>
+        </fieldset>
+        <p id="feedback" role="status" aria-live="polite"></p>
+        <button class="button" type="submit">Check my answer</button>
+      </form>
+    </dialog>
+  </body>
+</html>
